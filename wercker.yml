@@ -22,7 +22,7 @@ build:
         password: $PASSWORD
     - internal/docker-run:
         image: $USERNAME/testwerckernode
-        name: test-container
+        name: $CNT_NAME
         port: 80
     - script:
          code: |
