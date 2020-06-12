@@ -13,7 +13,7 @@ build:
           export IMAGE_ID=$IMAGE_BASE
           echo "Image is $IMAGE_ID"
     - internal/docker-build:
-       image-name: $IMAGE_BASE
+       image-name: testwerckernode
        dockerfile: Dockerfile1
     - internal/docker-push:
         image: testwerckernode
