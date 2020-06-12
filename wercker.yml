@@ -13,10 +13,15 @@ build:
           export IMAGE_ID=$IMAGE_BASE
           echo "Image is $IMAGE_ID"
     - internal/docker-build:
-       image-name: testwerckernode
+       image-name: $IMAGE_BASE
        dockerfile: Dockerfile1
+    - internal/docker-push:
+        image: testwerckernode
+        repository: $USERNAME/testwerckernode
+        username: $USERNAME
+        password: $PASSWORD
     - internal/docker-run:
-        image: $IMAGE_ID
+        image: $USERNAME/$IMAGE_BASE
         name: test-container
         port: 80
     - script:
@@ -42,11 +47,7 @@ build:
                 exit 1
             fi
    
-    - internal/docker-push:
-        image: testwerckernode
-        repository: $USERNAME/testwerckernode
-        username: $USERNAME
-        password: $PASSWORD
+   
     - script:
           name: Just-Pushed
           code:
