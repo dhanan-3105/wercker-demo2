@@ -21,7 +21,7 @@ build:
         username: $USERNAME
         password: $PASSWORD
     - internal/docker-run:
-        image: $USERNAME/testwerckernode
+        image: testwerckernode
         name: $CNT_NAME
         port: 80
 
