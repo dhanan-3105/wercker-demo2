@@ -24,12 +24,7 @@ build:
         image: $USERNAME/testwerckernode
         name: $CNT_NAME
         port: 80
-    - script:
-         code: |
-           echo "Testing the container.."
-           echo "CONTAINER NAME is $CNT_NAME"
-           curl -o /var/output.html $CNT_NAME:80
-           cat /var/output.html
+
     - script:
         name: Test the container that we started as a service
         code: |
